@@ -24,7 +24,7 @@ jobs:
     if: success()
     steps:
       - name: Run Action 3
-        run: exit 1
+        run: echo "Executing Action 4"
 
   action4:
     runs-on: ubuntu-latest
@@ -32,7 +32,8 @@ jobs:
     if: failure()
     steps:
       - name: Run Action 4
-        run: echo "Executing Action 4"
+        run: exit 1  # Force failure
+
 
   action5:
     runs-on: ubuntu-latest
