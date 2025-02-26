@@ -15,7 +15,7 @@ jobs:
     needs: action1
     steps:
       - name: Run Action 2
-        run: echo "Executing Action 3"
+        run: exit 1  # Force failure
 
 
   action3:
