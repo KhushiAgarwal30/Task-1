@@ -37,7 +37,8 @@ jobs:
   action5:
     runs-on: ubuntu-latest
     needs: [action3, action4]
-    if: failure()
+    if: failure() && (needs.action3.result == 'failure' || needs.action4.result == 'failure')
     steps:
       - name: Run Action 5
         run: echo "Executing Action 5"
+
