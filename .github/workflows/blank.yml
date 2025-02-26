@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Action 1
-        run: exit 1  # Force failure
-
+        run: echo "Executing Action 1"
   action2:
     runs-on: ubuntu-latest
     needs: action1
     steps:
       - name: Run Action 2
-        run: echo "Executing Action 2"
+        run: exit 1  # Force failure
+
 
   action3:
     runs-on: ubuntu-latest
